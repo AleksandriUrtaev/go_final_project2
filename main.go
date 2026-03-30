@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/AleksandriUrtaev/go_final_project/pkg/api"
-	"github.com/AleksandriUrtaev/go_final_project/pkg/db"
+	"github.com/AleksandriUrtaev/go_final_project2/pkg/api"
+	"github.com/AleksandriUrtaev/go_final_project2/pkg/db"
 )
 
 func main() {

@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/AleksandriUrtaev/go_final_project/pkg/db"
-	"github.com/AleksandriUrtaev/go_final_project/pkg/scheduler"
+	"github.com/AleksandriUrtaev/go_final_project2/pkg/db"
+	"github.com/AleksandriUrtaev/go_final_project2/pkg/scheduler"
 )
 
 func taskHandler(w http.ResponseWriter, r *http.Request) {

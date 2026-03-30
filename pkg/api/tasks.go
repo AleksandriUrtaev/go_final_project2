@@ -3,7 +3,7 @@ package api
 import (
 	"net/http"
 
-	"github.com/AleksandriUrtaev/go_final_project/pkg/db"
+	"github.com/AleksandriUrtaev/go_final_project2/pkg/db"
 )
 
 type TasksResp struct {

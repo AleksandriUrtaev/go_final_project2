@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	scheduler "github.com/AleksandriUrtaev/go_final_project/pkg/scheduler"
+	scheduler "github.com/AleksandriUrtaev/go_final_project2/pkg/scheduler"
 )
 
 const dateLayout = "20060102"
