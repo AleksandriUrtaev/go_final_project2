@@ -44,7 +44,7 @@ func Init() (*sql.DB, error) {
 	// создаём таб. при первом запуске
 	if nCreate {
 		if err := createTable(db); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("error in rows.Scan: %w", err)
 		}
 	}
 

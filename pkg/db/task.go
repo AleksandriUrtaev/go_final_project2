@@ -85,7 +85,7 @@ func Tasks(limit int, search string) ([]*Task, error) {
 	}
 
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error in rows.Scan: %w", err)
 	}
 	defer rows.Close()
 
@@ -97,11 +97,15 @@ func Tasks(limit int, search string) ([]*Task, error) {
 
 		err := rows.Scan(&id, &t.Date, &t.Title, &t.Comment, &t.Repeat)
 		if err != nil {
-			return nil, err
+			return nil, fmt.Errorf("error in rows.Scan: %w", err)
 		}
 
 		t.ID = strconv.FormatInt(id, 10)
 		tasks = append(tasks, &t)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("rows iteration error: %w", err)
 	}
 
 	// Проверка nil
@@ -124,7 +128,7 @@ func GetTask(id string) (*Task, error) {
 
 	err := DB.QueryRow(query, id).Scan(&idInt, &t.Date, &t.Title, &t.Comment, &t.Repeat)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("error in rows.Scan: %w", err)
 	}
 
 	t.ID = strconv.FormatInt(idInt, 10)
